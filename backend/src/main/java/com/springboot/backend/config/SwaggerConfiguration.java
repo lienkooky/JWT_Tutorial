@@ -17,17 +17,16 @@ import springfox.documentation.spring.web.plugins.Docket;
 @Configuration
 public class SwaggerConfiguration {
 
-	
-	
-	@Bean
-	public Docket api() {
+
+    @Bean
+    Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
+				.apiInfo(apiInfo())
 			    .useDefaultResponseMessages(false)
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("com.springboot.backend"))
 				.paths(PathSelectors.any())
-				.build()
-				.apiInfo(apiInfo());
+				.build();
 	}
 	
 	private ApiInfo apiInfo() {
