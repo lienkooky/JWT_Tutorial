@@ -1,0 +1,9 @@
+package com.springboot.backend.data.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.springboot.backend.data.entity.ProductEntity;
+
+public interface ProductRepository extends JpaRepository<ProductEntity, String> {
+
+}
